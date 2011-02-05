@@ -8,6 +8,9 @@ urlpatterns = patterns('',
     # Example:
     # (r'^karma/', include('karma.foo.urls')),
 
+    (r'^$', 'points.views.index'), 
+    (r'^points/', include('karma.points.urls')), 
+
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
