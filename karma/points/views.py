@@ -14,7 +14,7 @@ def add(request):
             point = form.save(commit=False)
             point.user = request.user
             point.save()
-            return HttpResponseRedirect(reverse('points.views.index'))
+            return HttpResponseRedirect(reverse('karma.views.dashboard', kwargs = {'user_id':request.user.id}))
     else:
         form = forms.PointForm()
         
