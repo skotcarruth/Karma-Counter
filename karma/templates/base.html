@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>{% block title %}Karma Counter. Yeah!{% endblock %}</title>
+	<meta name="description" content="Karma Counter is a way to keep track of the good things you do, the bad things you do, and the karma that comes back to you.">
+	<meta name="keywords" content="karma,kharma,carma,buddhism,buddist">
+	<link rel="stylesheet" type"text/css" href="{{ MEDIA_URL }}css/base.css" media="all"/>
+	{% block head %} <!-- additional header stuff --> {% endblock %}
+	<!-- Google Analytics can go here, someday -->
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+<header>{% block hd %}{% include "_header.html" %}{% endblock %}</header>
+
+<section id="content">
+	<h1>{% block pageheader %}All of them!{% endblock %}</h1>
+	{% block main %}{% endblock %}
+</section>
+
+<footer>{% block footer %}{% include "_footer.html" %}{% endblock %}</footer>
+
+{% block js %}{% endblock %}
+
+</body>
+</html>
