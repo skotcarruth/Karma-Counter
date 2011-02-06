@@ -8,8 +8,8 @@ urlpatterns = patterns('',
     # Example:
     # (r'^karma/', include('karma.foo.urls')),
 
-    (r'^$', 'views.index'), 
-    (r'^user/(?P<user_id>\d+)/$', 'views.dashboard'), 
+    (r'^$', 'karma.views.index'), 
+    (r'^user/(?P<user_id>\d+)/$', 'karma.views.dashboard'), 
     (r'^points/', include('karma.points.urls')), 
 
     # Uncomment the admin/doc line below to enable admin documentation:
