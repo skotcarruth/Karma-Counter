@@ -16,7 +16,7 @@ def index(request):
     create_user_form = UserCreationForm()
     login_form = AuthenticationForm()
     return render_to_response('index.html', {
-        'points': points,
+        'points': points[:20],
         'create_user_form': create_user_form,
         'login_form': login_form,
         'is_logged_in': request.user.is_authenticated(),
@@ -53,7 +53,14 @@ def userkarma(request, user_id=None):
     '''user karma page'''
     user = User.objects.get(pk=user_id)
     points = user.point_set.all()
-    return render_to_response('userkarma.html', {
+    return render_to_response('users/userkarma.html', {
         'points': points,
         'user': user,
+    }, RequestContext(request))
+
+def userindex(request):
+    '''user index page'''
+    users = User.objects.all()
+    return render_to_response('users/index.html', {
+        'users': users,
     }, RequestContext(request))

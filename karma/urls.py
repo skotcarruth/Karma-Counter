@@ -10,9 +10,10 @@ urlpatterns = patterns('',
     # (r'^karma/', include('karma.foo.urls')),
 
     (r'^$', 'karma.views.index'), 
-    (r'^login$', 'karma.views.login'), 
-    (r'^logout$', 'karma.views.logout'), 
-    (r'^user/(?P<user_id>\d+)/$', 'karma.views.userkarma'), 
+    (r'^login/$', 'karma.views.login'), 
+    (r'^logout/$', 'karma.views.logout'), 
+    (r'^users/$', 'karma.views.userindex'), 
+    (r'^users/(?P<user_id>\d+)/$', 'karma.views.userkarma'), 
     (r'^points/', include('karma.points.urls')), 
 
     # Uncomment the admin/doc line below to enable admin documentation:

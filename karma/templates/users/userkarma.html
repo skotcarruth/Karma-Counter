@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Karma Counter for {{ user }}{% endblock %}
+
+{% block pageheader %}{{ user }}{% endblock %}
+
+{% block main %}
+
+
+	<ul>
+	{% for point in points %}
+		<li>{{ point.get_value_display }} <time class="time" datetime="{{ point.created_ts }}">{{ point.created_ts|timesince }} ago</time></li>
+	{% endfor %}
+	</ul>
+{% endblock %}
