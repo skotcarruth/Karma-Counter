@@ -1,0 +1,21 @@
+body{
+    background: #e5e4e1 url('../images/bg-tile.png') repeat-x;
+    font-family: Verdana, sans-serif;
+    color: #5a5144;
+}
+
+#pagewrap{
+    width: 960px;
+    margin: 0 auto;
+}
+
+#logo{
+    height: 70px;
+    width: 330px;
+    background: url('../images/karma-counter-logo.png') no-repeat;    
+    text-indent: -9999px;
+}
+
+header#header{
+    border-bottom: 1px dotted #5a5144;
+}
