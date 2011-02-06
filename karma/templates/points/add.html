@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Karma Counter. Add!</title>
-</head>
-<body>
-<h1>The form!</h1>
+{% extends "base.html" %}
+
+{% block title %}Count It!{% endblock %}
+
+{% block pageheader %}Count It!{% endblock %}
+
+{% block main %}
 	<form action="#" method="post" accept-charset="utf-8">
 		{% csrf_token %}
 		<ul>
@@ -13,5 +12,4 @@
 			<li><input type="submit" value="Continue &rarr;"></li>
 		</ul>
 	</form>
-</body>
-</html>
+{% endblock %}

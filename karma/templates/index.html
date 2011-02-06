@@ -8,7 +8,7 @@
 <h1>All of them!</h1>
 	<ul>
 	{% for point in points %}
-		<li>{{ point.created_ts }} &ndash; {{ point.value }} to {{ point.user }}</li>
+		<li>{{ point.created_ts }} &ndash; {{ point.value }} to <a href="{% url karma.views.dashboard user_id=point.user.id %}">{{ point.user }}</a></li>
 	{% endfor %}
 	</ul>
 </body>
