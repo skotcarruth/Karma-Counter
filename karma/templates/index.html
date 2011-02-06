@@ -6,6 +6,11 @@
 </head>
 <body>
 <h1>All of them!</h1>
+   {% if not is_logged_in %}
+   {% include 'registration/login.html' %}
+   {% else %}
+   <a href="{% url karma.views.logout %}">Logout</a>
+   {% endif %}
 	<ul>
 	{% for point in points %}
 		<li>{{ point.created_ts }} &ndash; {{ point.value }} to {{ point.user }}</li>

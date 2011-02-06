@@ -8,7 +8,9 @@ urlpatterns = patterns('',
     # Example:
     # (r'^karma/', include('karma.foo.urls')),
 
-    (r'^$', 'views.index'), 
+    (r'^$', 'karma.views.index'), 
+    (r'^login$', 'karma.views.login'), 
+    (r'^logout$', 'karma.views.logout'), 
     (r'^user/(?P<user_id>\d+)/$', 'views.dashboard'), 
     (r'^points/', include('karma.points.urls')), 
 
