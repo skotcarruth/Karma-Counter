@@ -10,6 +10,8 @@ urlpatterns = patterns('',
     # (r'^karma/', include('karma.foo.urls')),
 
     (r'^$', 'karma.views.index'), 
+    (r'^login$', 'karma.views.login'), 
+    (r'^logout$', 'karma.views.logout'), 
     (r'^user/(?P<user_id>\d+)/$', 'karma.views.dashboard'), 
     (r'^points/', include('karma.points.urls')), 
 
