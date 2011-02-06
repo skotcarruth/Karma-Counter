@@ -19,6 +19,12 @@ body{
     text-indent: -9999px;
 }
 
+#logo a{
+    display: block;
+    height: 70px;
+    width: 330px;
+}
+
 #header{
     border-bottom: 1px dotted #5a5144;
     margin-bottom: 30px;

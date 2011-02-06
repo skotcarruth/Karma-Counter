@@ -16,7 +16,7 @@
 	<h2>Check out the recent activity!</h2>
 	<ul>
 	{% for point in points %}
-		<li>{{ point.created_ts }} &ndash; {{ point.value }} to <a href="{% url karma.views.dashboard user_id=point.user.id %}">{{ point.user }}</a></li>
+		<li>{{ point.created_ts }} &ndash; {{ point.value }} to <a href="{% url karma.views.userkarma user_id=point.user.id %}">{{ point.user }}</a></li>
 	{% endfor %}
 	</ul>
 

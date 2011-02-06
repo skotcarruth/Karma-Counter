@@ -10,7 +10,6 @@ from django.http import HttpResponseRedirect
 from karma.points.models import Point
 
 
-
 def index(request):
     '''homepage view'''
     points = Point.objects.all()
@@ -21,9 +20,7 @@ def index(request):
         'create_user_form': create_user_form,
         'login_form': login_form,
         'is_logged_in': request.user.is_authenticated(),
-    },
-   RequestContext(request)
-   )
+    }, RequestContext(request))
 
 def login(request):
    if request.method == 'POST':
@@ -52,11 +49,11 @@ def logout(request):
 def register(request):
    pass
 
-def dashboard(request, user_id=None):
-    '''user dashboard page'''
+def userkarma(request, user_id=None):
+    '''user karma page'''
     user = User.objects.get(pk=user_id)
     points = user.point_set.all()
-    return render_to_response('dashboard.html', {
+    return render_to_response('userkarma.html', {
         'points': points,
         'user': user,
-    })
+    }, RequestContext(request))
