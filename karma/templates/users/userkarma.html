@@ -6,10 +6,19 @@
 
 {% block main %}
 
+	<p>{{ total_points }}</p>
+
+	<figure id="chart"></figure>
 
 	<ul>
 	{% for point in points %}
 		<li>{{ point.get_value_display }} <time class="time" datetime="{{ point.created_ts }}">{{ point.created_ts|timesince }} ago</time></li>
 	{% endfor %}
 	</ul>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" charset="utf-8">
+	$.plot($("#chart"), data, options);	
+</script>
 {% endblock %}

@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     (r'^users/$', 'karma.views.userindex'), 
     (r'^users/(?P<user_id>\d+)/$', 'karma.views.userkarma'), 
     (r'^points/', include('karma.points.urls')), 
+    (r'^api/', include('karma.api.urls')), 
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),

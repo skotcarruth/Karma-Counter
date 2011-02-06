@@ -8,7 +8,7 @@ from django.template import RequestContext
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from karma.points.models import Point
-
+from django.db.models import Sum
 
 def index(request):
     '''homepage view'''
@@ -53,9 +53,11 @@ def userkarma(request, user_id=None):
     '''user karma page'''
     user = User.objects.get(pk=user_id)
     points = user.point_set.all()
+    total_points = user.point_set.all().aggregate(Sum('value'))['value__sum']
     return render_to_response('users/userkarma.html', {
         'points': points,
         'user': user,
+        'total_points': total_points,
     }, RequestContext(request))
 
 def userindex(request):

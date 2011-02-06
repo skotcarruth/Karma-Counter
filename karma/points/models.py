@@ -10,6 +10,7 @@ class Point(models.Model):
         (-1, "-1"),
     )
     created_ts = models.DateTimeField(auto_now_add=True)
+    # location = models.CharField()
     comment = models.CharField(max_length=130, null=True, blank=True)
     value = models.IntegerField(choices=VALUE_CHOICES)
     user = models.ForeignKey(User)

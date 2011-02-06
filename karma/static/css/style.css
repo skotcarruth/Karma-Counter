@@ -56,6 +56,11 @@ ul li{
     background-color: #ccc;
 }
 
+#chart{
+    width: 600px;
+    height: 400px;
+}
+
 
 #footer{
     border-top: 1px dotted #5a5144;
