@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Karma Counter for {{ user }}</title>
+</head>
+<body>
+<h1>{{ user }}</h1>
+	<ul>
+	{% for point in points %}
+		<li>{{ point.created_ts }} &ndash; {{ point.value }}</li>
+	{% endfor %}
+	</ul>
+</body>
+</html>

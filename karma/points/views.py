@@ -5,13 +5,6 @@ from django.template import RequestContext
 from karma.points.models import Point
 from karma.points import forms
 
-
-def index(request):
-    '''homepage view'''
-    points = Point.objects.all()
-    return render_to_response('index.html', {
-        'points': points,
-    })
     
 def add(request):
     '''add point page'''
