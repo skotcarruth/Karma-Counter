@@ -10,6 +10,7 @@ from django.http import HttpResponseRedirect
 from karma.points.models import Point
 from django.db.models import Sum
 
+
 def index(request):
     '''homepage view'''
     points = Point.objects.all()
@@ -59,7 +60,7 @@ def userkarma(request, user_id=None):
         'user': user,
         'total_points': total_points,
     }, RequestContext(request))
-
+    
 def userindex(request):
     '''user index page'''
     users = User.objects.all()

@@ -5,7 +5,7 @@ from django.template import RequestContext
 from karma.points.models import Point
 from karma.points import forms
 
-    
+
 def add(request):
     '''add point page'''
     if request.method == 'POST':

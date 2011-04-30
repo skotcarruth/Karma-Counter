@@ -2,6 +2,11 @@
 
 {% block title %}Karma Counter for {{ user }}{% endblock %}
 
+{% block head %} 
+<link rel='stylesheet' type='text/css' href='Flot.css' />
+{% endblock %}
+
+
 {% block pageheader %}{{ user }}{% endblock %}
 
 {% block main %}
@@ -18,7 +23,17 @@
 {% endblock %}
 
 {% block js %}
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}js/jquery.flot.js"></script>
+
 <script type="text/javascript" charset="utf-8">
-	$.plot($("#chart"), data, options);	
+	$(function() {
+		var p = [
+			{% for point in points %}
+				[{{ point.created_ts }}, {{ point.value }}], 
+			{% endfor %}
+		]
+		$.plot($("#chart"), [p], { xaxis: { mode: "time" } });	
+	})
 </script>
+
 {% endblock %}
