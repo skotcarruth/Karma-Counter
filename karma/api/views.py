@@ -1,4 +1,5 @@
 import json
+import time
 from django.contrib.auth.models import User
 from karma.points.models import Point
 from django.http import HttpResponse
@@ -19,7 +20,7 @@ def userkarma(request, user_id=None):
         'id': user.id,
         'username': user.username,
         'points': map(lambda point: {
-            'created_ts': str(point.created_ts),
+            'created_ts': time.mktime(point.created_ts.timetuple()),
             'value': point.value,
         }, user.point_set.all()),
     }), mimetype="text/plain")
