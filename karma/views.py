@@ -1,3 +1,6 @@
+import json
+import time
+
 from django.shortcuts import render_to_response
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -55,10 +58,16 @@ def userkarma(request, user_id=None):
     user = User.objects.get(pk=user_id)
     points = user.point_set.all()
     total_points = user.point_set.all().aggregate(Sum('value'))['value__sum']
+    graph_points = [
+        (time.mktime(point.created_ts.timetuple()) * 1000, point.cumulative_value)
+        for point in points
+    ]
+    
     return render_to_response('users/userkarma.html', {
         'points': points,
         'user': user,
         'total_points': total_points,
+        'graph_points': json.dumps(graph_points),
     }, RequestContext(request))
     
 def userindex(request):

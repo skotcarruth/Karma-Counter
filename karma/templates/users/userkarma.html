@@ -23,15 +23,12 @@
 {% endblock %}
 
 {% block js %}
+{{ block.super }}
 <script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}js/jquery.flot.js"></script>
 
 <script type="text/javascript" charset="utf-8">
 	$(function() {
-		var p = [
-			{% for point in points %}
-				[{{ point.created_ts }}, {{ point.value }}], 
-			{% endfor %}
-		]
+		var p = {{ graph_points }};
 		$.plot($("#chart"), [p], { xaxis: { mode: "time" } });	
 	})
 </script>
